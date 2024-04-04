@@ -11,18 +11,15 @@
 
 
 
-
+const button=document.getElementById("button")
 
 const getUsers=fetch(' https://jsonplaceholder.typicode.com/users')
 .then(response =>response.json())
-.then(items=>{
-    
-   
+.then(items=>{ addNewElement=()=>{
     const nameElement=document.getElementById("Namee")
     const emailelement=document.getElementById("Email")
-    items.forEach(element => {
-        const button=document.getElementById("button")
-button.addEventListener("click",getUsers)
+    items.forEach(element => {       
+
 
         const nameElementdiv=document.createElement("div")
         const emailelementdiv=document.createElement("div")
@@ -31,7 +28,7 @@ button.addEventListener("click",getUsers)
         
         nameElement.append(nameElementdiv)
         emailelement.append(emailelementdiv)
-    });
+});}
 })
 .then(data=>console.log(data))
 .catch(error=>console.log(error))
